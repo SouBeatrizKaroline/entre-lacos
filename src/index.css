@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #fdfbf7;
+    --text-primary: #293241;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+  }
+
+  /* Modo Alto Contraste */
+  body.high-contrast {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  body.high-contrast * {
+    border-color: #ffffff !important;
+  }
+
+  body.high-contrast a,
+  body.high-contrast button {
+    outline-color: #ffde59 !important;
+  }
+
+  /* Redução de Movimento */
+  body.reduced-motion *,
+  body.reduced-motion *::before,
+  body.reduced-motion *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  /* Escalas de Fonte */
+  body.font-size-sm {
+    font-size: 0.875rem;
+  }
+  body.font-size-normal {
+    font-size: 1rem;
+  }
+  body.font-size-large {
+    font-size: 1.15rem;
+  }
+  body.font-size-extra-large {
+    font-size: 1.3rem;
+  }
+
+  /* Fonte Disléxica Alternativa */
+  body.dyslexic-font {
+    font-family: 'Comic Sans MS', 'OpenDyslexic', cursive, sans-serif !important;
+    letter-spacing: 0.05em;
+    word-spacing: 0.1em;
+  }
+}
+
+/* Foco visível acessível em todos os controles interativos */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #c85a32;
+  outline-offset: 3px;
+}
